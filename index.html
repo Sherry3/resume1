@@ -22,7 +22,11 @@
 
   <section class="about collapsible-section">
     <div class="container">
-      <h2 class="collapsible-toggle">About Me <span class="toggle-icon">▼</span></h2>
+      <h2 class="collapsible-toggle">About Me 
+        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24">
+          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>  
+      </h2>
         <div class="collapsible-content">
           <ul class="about-list">
             <li>Senior Software Engineer with 7+ years of experience in backend systems and infrastructure.</li>
@@ -120,17 +124,15 @@
   document.addEventListener('DOMContentLoaded', function () {
     const toggles = document.querySelectorAll('.collapsible-toggle');
 
-    toggles.forEach((toggle, index) => {
+    toggles.forEach((toggle) => {
       toggle.style.cursor = 'pointer';
-
       const icon = toggle.querySelector('.toggle-icon');
       const content = toggle.nextElementSibling;
 
       toggle.addEventListener('click', () => {
         content.classList.toggle('collapsed');
-
         if (icon) {
-          icon.textContent = content.classList.contains('collapsed') ? '►' : '▼';
+          icon.classList.toggle('rotate');
         }
       });
     });
