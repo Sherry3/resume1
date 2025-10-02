@@ -120,18 +120,41 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('.collapsible-toggle').forEach((toggle) => {
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOM fully loaded and parsed.");
+
+    const toggles = document.querySelectorAll('.collapsible-toggle');
+    console.log(`Found ${toggles.length} collapsible toggle(s).`);
+
+    toggles.forEach((toggle, index) => {
+      console.log(`Setting up toggle #${index + 1}:`, toggle.textContent.trim());
+
       toggle.style.cursor = 'pointer';
+
       const icon = toggle.querySelector('.toggle-icon');
       const content = toggle.nextElementSibling;
-  
+
+      if (!content) {
+        console.warn(`No collapsible content found for toggle: "${toggle.textContent.trim()}"`);
+        return;
+      }
+
+      console.log(`Found collapsible content for: "${toggle.textContent.trim()}"`);
+
       toggle.addEventListener('click', () => {
+        console.log(`Toggled section: "${toggle.textContent.trim()}"`);
+
         content.classList.toggle('collapsed');
-        icon.textContent = content.classList.contains('collapsed') ? '►' : '▼';
+
+        if (icon) {
+          icon.textContent = content.classList.contains('collapsed') ? '►' : '▼';
+        }
       });
     });
-  </script>
+  });
+</script>
+
 
 
 </body>
