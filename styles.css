@@ -89,14 +89,6 @@ section {
   font-size: 0.95rem;
 }
 
-footer {
-  background: #f1f1f1;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-
 .skills-rated .skill {
   display: flex;
   justify-content: space-between;
@@ -111,4 +103,13 @@ footer {
   color: #f5a623; /* gold-like color for stars */
   font-family: monospace;
 }
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
 
