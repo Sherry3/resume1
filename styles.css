@@ -101,19 +101,20 @@ section {
 }
 
 .collapsible-content {
-  transition: max-height 0.3s ease-out, opacity 0.3s ease;
-  overflow: hidden;
   max-height: 1000px;
+  overflow: hidden;
   opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
+/* Collapsed state */
 .collapsible-content.collapsed {
   max-height: 0;
   opacity: 0;
-  padding: 0;
-  margin: 0;
-  pointer-events: none;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
 }
+
 
 .toggle-icon {
   font-size: 0.8em;
