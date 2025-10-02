@@ -65,6 +65,16 @@ section {
   border-bottom: 1px solid #ddd;
 }
 
+.about-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #444;
+  padding-top: 0.5rem;
+}
+
+
 .job, .project {
   margin-bottom: 1.5rem;
 }
