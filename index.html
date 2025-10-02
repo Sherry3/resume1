@@ -21,18 +21,6 @@
   </header>
 
   <section class="about collapsible-section">
-  <div class="container">
-    <h2 class="collapsible-toggle">About Me <span class="toggle-icon">▼</span></h2>
-    <div class="collapsible-content">
-      <ul class="about-list">
-        <li>Senior Software Engineer with 7+ years of experience...</li>
-        <li>Specializes in reverse proxies, distributed systems...</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-  <section class="about collapsible-section">
     <div class="container">
       <h2 class="collapsible-toggle">About Me <span class="toggle-icon">▼</span></h2>
         <div class="collapsible-content">
@@ -47,9 +35,9 @@
     </div>
   </section>
 
-  <section class="experience">
+  <section class="experience collapsible-section">
     <div class="container">
-      <h2>Experience</h2>
+      <h2 class="collapsible-toggle">Experience <span class="toggle-icon">▼</span></h2>
       <div class="job">
         <h3>Lead Backend Engineer</h3>
         <p class="company">ProxyWave Inc. · 2021 – Present</p>
@@ -63,9 +51,9 @@
     </div>
   </section>
 
-  <section class="skills">
+  <section class="skills collapsible-section">
     <div class="container">
-      <h2>Skills</h2>
+      <h2 class="collapsible-toggle">Skills <span class="toggle-icon">▼</span></h2>
 
       <br>
       <h3>Proficient In</h3>
@@ -89,9 +77,9 @@
     </div>
   </section>
 
-  <section class="projects">
+  <section class="projects collapsible-section">
     <div class="container">
-      <h2>Projects</h2>
+      <h2 class="collapsible-toggle">Projects <span class="toggle-icon">▼</span></h2>
       <div class="project">
         <h3>SmartProxy</h3>
         <p>Built a dynamic reverse proxy router in Go with service discovery and live reloading, capable of scaling to thousands of microservices.</p>
@@ -105,9 +93,9 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact collapsible-section">
     <div class="container">
-      <h2>Contact</h2>
+      <h2 class="collapsible-toggle">Contact <span class="toggle-icon">▼</span></h2>
       <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
       <p>LinkedIn: <a href="#">linkedin.com/in/johndoe</a></p>
       <p>GitHub: <a href="#">github.com/johndoe</a></p>
@@ -122,29 +110,15 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOM fully loaded and parsed.");
-
     const toggles = document.querySelectorAll('.collapsible-toggle');
-    console.log(`Found ${toggles.length} collapsible toggle(s).`);
 
     toggles.forEach((toggle, index) => {
-      console.log(`Setting up toggle #${index + 1}:`, toggle.textContent.trim());
-
       toggle.style.cursor = 'pointer';
 
       const icon = toggle.querySelector('.toggle-icon');
       const content = toggle.nextElementSibling;
 
-      if (!content) {
-        console.warn(`No collapsible content found for toggle: "${toggle.textContent.trim()}"`);
-        return;
-      }
-
-      console.log(`Found collapsible content for: "${toggle.textContent.trim()}"`);
-
       toggle.addEventListener('click', () => {
-        console.log(`Toggled section: "${toggle.textContent.trim()}"`);
-
         content.classList.toggle('collapsed');
 
         if (icon) {
